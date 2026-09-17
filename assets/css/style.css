@@ -3,6 +3,26 @@
    Ruhiges, warmes Design: Creme, Walnussbraun, Salbeigrün, Alt-Rosa.
    ========================================================================== */
 
+/* Lokal eingebundene Schriften (keine externen Google-Fonts-Requests –
+   dadurch werden keine Besucher-IPs an Google übertragen, siehe Hinweis
+   in datenschutz.html). Beide sind Variable Fonts, ein Schnitt deckt den
+   jeweils genutzten Gewichtsbereich ab. */
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/work-sans-variable.woff2") format("woff2");
+}
+
 :root {
   /* Farbpalette (siehe Recherche.md, Abschnitt "Gestaltungskonzept") */
   --color-cream: #F8F3EA;        /* Grundton Hintergrund */
