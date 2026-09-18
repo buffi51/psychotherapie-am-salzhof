@@ -30,10 +30,10 @@
         <ul>
           <li><a href="index.html">Startseite</a></li>
           <li><a href="die-praxis.html">Die Praxis</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="team.html">Das Team</a></li>
           <li><a href="leistungen.html">Leistungen &amp; Kosten</a></li>
           <li><a href="termine.html">Termine</a></li>
-          <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+          <li><a href="kontakt.html" aria-current="page">Kontakt &amp; Anfahrt</a></li>
         </ul>
       </nav>
     </div>
@@ -45,8 +45,8 @@
     <section class="section">
       <div class="container split">
         <div>
-          <p class="eyebrow">Kontakt &amp; Anfahrt</p>
-          <h1>So erreichen Sie uns</h1>
+          <p class="eyebrow">Kontakt</p>
+          <h1>Kontakt</h1>
           <p>Termine vereinbaren wir ausschließlich telefonisch nach Vereinbarung. Rufen Sie uns gerne zu unseren Sprechzeiten an.</p>
 
           <!--
@@ -74,12 +74,6 @@
               Telefonisch nach Vereinbarung, siehe <a href="termine.html">Sprechstunde &amp; Termine</a>
             </li>
           </ul>
-
-          <p>
-            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Schie%C3%9Fhofstra%C3%9Fe+1+32105+Bad+Salzuflen" target="_blank" rel="noopener">
-              Route in Google Maps öffnen
-            </a>
-          </p>
         </div>
         <figure class="split-figure">
           <img src="assets/img/aussenansicht/aussenansicht-1.jpg" alt="Außenfassade des denkmalgeschützten Fachwerkhauses Schießhofstraße 1 mit spitzem Giebel, Fachwerk und blau gerahmter Eingangstür.">
@@ -94,6 +88,13 @@
         <h2>Lage &amp; Erreichbarkeit</h2>
         <p>Unsere Praxis liegt mitten in der historischen Altstadt von Bad Salzuflen, direkt am Salzhof – fußläufig zum Kurpark und zu allen Kureinrichtungen. Die Altstadt ist auch mit öffentlichen Verkehrsmitteln gut zu erreichen.</p>
         <p class="text-muted">Unser Haus ist ein denkmalgeschütztes Fachwerkhaus mit Treppen im Eingangsbereich; ein ebenerdiger, barrierefreier Zugang ist derzeit nicht gegeben. Bei Fragen zur Barrierefreiheit sprechen Sie uns gerne vorab an.</p>
+
+        <div class="map-embed" id="map-embed">
+          <div class="map-placeholder" id="map-placeholder">
+            <p>Hier können Sie eine interaktive Karte von Google Maps mit einer Markierung unserer Praxis laden. Dabei baut Ihr Browser eine Verbindung zu Servern von Google auf und übermittelt dabei Ihre IP-Adresse – mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            <button type="button" class="btn btn-primary" id="map-load-btn">Karte laden</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -111,7 +112,7 @@
         <h2>Navigation</h2>
         <ul>
           <li><a href="die-praxis.html">Die Praxis</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="team.html">Das Team</a></li>
           <li><a href="leistungen.html">Leistungen &amp; Kostenübernahme</a></li>
           <li><a href="termine.html">Sprechstunde &amp; Termine</a></li>
           <li><a href="kontakt.html">Kontakt &amp; Anfahrt</a></li>
@@ -132,5 +133,19 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Karte erst nach Klick laden (keine automatische Verbindung zu Google
+    // beim Seitenaufruf) – siehe Hinweis in datenschutz.html.
+    (function () {
+      var btn = document.getElementById("map-load-btn");
+      var wrap = document.getElementById("map-embed");
+      if (!btn || !wrap) return;
+      btn.addEventListener("click", function () {
+        wrap.innerHTML =
+          '<iframe src="https://www.google.com/maps?q=Schie%C3%9Fhofstra%C3%9Fe+1,+32105+Bad+Salzuflen&z=17&output=embed" ' +
+          'title="Standort der Praxis auf Google Maps" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>';
+      });
+    })();
+  </script>
 </body>
 </html>
