@@ -409,37 +409,8 @@ hr.divider {
 
 .hero-figure img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-}
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6em;
-  margin: var(--space-m) 0;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.4em 0.9em;
-  background: var(--color-cream-deep);
-  border: 1px solid var(--color-stone);
-  border-radius: 999px;
-  color: var(--color-walnut-soft);
-}
-
-.tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-sage);
-  flex: none;
 }
 
 /* ---- Bild-/Textblöcke, Grids -------------------------------------------- */
@@ -466,7 +437,7 @@ hr.divider {
 
 .split-figure img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
@@ -474,6 +445,10 @@ figcaption {
   font-size: 0.85rem;
   color: var(--color-walnut-soft);
   margin-top: 0.6em;
+}
+
+.split-figure--landscape img {
+  aspect-ratio: 4 / 3;
 }
 
 .gallery {
@@ -616,6 +591,79 @@ th {
 }
 
 .notice p:last-child { margin-bottom: 0; }
+
+/* ---- Ablauf-Schritte & Sprechzeiten (Termine) ------------------------------ */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-l);
+}
+
+@media (min-width: 760px) {
+  .steps { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+}
+
+.step {
+  border-top: 1px solid var(--color-walnut-soft);
+  padding-top: var(--space-m);
+}
+
+.step-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--color-sage-text);
+  margin-bottom: var(--space-s);
+}
+
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-m) var(--space-xl);
+  margin-bottom: var(--space-m);
+}
+
+.time-slot {
+  border-left: 2px solid var(--color-sage);
+  padding-left: var(--space-m);
+}
+
+.time-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-walnut-soft);
+  margin-bottom: 0.3em;
+}
+
+.time {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--color-walnut);
+}
+
+.audience {
+  display: grid;
+  gap: var(--space-l);
+  margin-top: var(--space-l);
+}
+
+@media (min-width: 760px) {
+  .audience { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+}
+
+.audience > div {
+  border-top: 1px solid var(--color-stone);
+  padding-top: var(--space-m);
+}
 
 /* ---- Karte (Klick-zum-Laden) ---------------------------------------------- */
 
