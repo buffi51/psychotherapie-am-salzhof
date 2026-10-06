@@ -282,6 +282,7 @@ hr.divider {
   color: var(--color-walnut);
   text-decoration: none;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .site-logo span {
@@ -332,7 +333,7 @@ hr.divider {
 
 .main-nav ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem 1.35rem;
   list-style: none;
   margin: 0;
@@ -346,6 +347,7 @@ hr.divider {
   color: var(--color-walnut-soft);
   padding: 0.4em 0.1em;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .main-nav a:hover,
@@ -354,7 +356,7 @@ hr.divider {
   border-bottom-color: var(--color-sage);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .nav-toggle { display: inline-flex; }
 
   .main-nav {
@@ -463,14 +465,6 @@ figcaption {
   gap: var(--space-m);
 }
 
-.gallery--four {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@media (min-width: 900px) {
-  .gallery--four { grid-template-columns: repeat(4, 1fr); }
-}
-
 .gallery figure {
   margin: 0;
   border-radius: var(--radius);
@@ -482,6 +476,8 @@ figcaption {
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
+
+.gallery--landscape img { aspect-ratio: 4 / 3; }
 
 .card-grid {
   display: grid;
