@@ -413,6 +413,8 @@ hr.divider {
   object-fit: cover;
 }
 
+.hero-figure--tall img { aspect-ratio: 2 / 3; }
+
 /* ---- Bild-/Textblöcke, Grids -------------------------------------------- */
 
 .split {
@@ -451,10 +453,22 @@ figcaption {
   aspect-ratio: 4 / 3;
 }
 
+.split-figure--tall img {
+  aspect-ratio: 2 / 3;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: var(--space-m);
+}
+
+.gallery--four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 900px) {
+  .gallery--four { grid-template-columns: repeat(4, 1fr); }
 }
 
 .gallery figure {
@@ -493,8 +507,16 @@ figcaption {
   overflow: hidden;
 }
 
+.team-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-stone);
+}
+
 .team-photo-placeholder {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   background: var(--color-cream-deep);
   display: flex;
   align-items: center;
