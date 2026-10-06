@@ -231,7 +231,7 @@ hr.divider {
 }
 
 .btn-primary:hover {
-  background: var(--color-sage-deep);
+  background: var(--color-sage-text);
   color: var(--color-white);
 }
 
@@ -311,7 +311,11 @@ hr.divider {
   background: none;
   border: 1px solid var(--color-stone);
   border-radius: var(--radius);
-  padding: 0.5em 0.7em;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
