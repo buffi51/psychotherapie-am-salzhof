@@ -27,10 +27,12 @@ assets/
     favicon.svg
 ```
 
-Die Original-Fotos liegen unverändert in `Fotos_Eingangsbereich/`, `Fotos_Behandlungsraum/`
-und `Fotos_Aussenansicht/` — die Dateien unter `assets/img/` sind für das Web verkleinerte
-und komprimierte Kopien (mit `sips`, macOS-Bordmittel; für noch kleinere Dateien später ggf.
-ImageMagick oder `cwebp` installieren und WebP-Versionen ergänzen).
+Die Original-Fotos liegen unverändert lokal in den Ordnern `Fotos_*/` (jeweils mit einem
+Unterordner `Archiv/` für nicht eingebundene Aufnahmen). Diese Ordner sind per `.gitignore`
+vom Repository ausgeschlossen, weil das Repository öffentlich ist — die Dateien unter
+`assets/img/` sind für das Web verkleinerte und komprimierte Kopien (mit `sips`,
+macOS-Bordmittel; für noch kleinere Dateien später ggf. ImageMagick oder `cwebp` installieren
+und WebP-Versionen ergänzen). Auch interne Recherche-Notizen (`Recherche.md`) bleiben lokal.
 
 ## Lokal ansehen
 

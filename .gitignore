@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+# Originalfotos und interne Notizen bleiben lokal (Repository ist öffentlich)
+Fotos_*/
+Recherche.md
